@@ -48,6 +48,9 @@
       overflow: scroll;
       height: 60vh;
     }
+    .list-group-item {
+      padding: 0.125rem !important;
+    }
 
   </style>
 </head>
@@ -58,9 +61,9 @@
       <div class="card-body">
         <img class="logo" alt="mml logo" src="https://www.maanmittauslaitos.fi/themes/custom/mml/images/suomi_logo_rgb.svg" />
         <h1 class="card-title">Kiinteistöjaotus - beta1</h1>
-        <p class="card-text">2.3.2021 julkaistaan Kiinteistöjaotuksen OGC API Features ja Vektoritiilet beta1</p>
+        <p class="card-text">NN.3.2021 julkaistaan Kiinteistöjaotuksen OGC API Features ja Vector Tiles beta1</p>
 
-        <label for="api" class="card-text">Rajapintakuvaukset</label>
+        <label for="api" class="card-text">Uusien palveluiden rajapintakuvaukset</label>
         <ul id="api" class="list-group">
           <li class="list-group-item"><a href="javascript:demo('openapi')" class="btn btn-link">Kiinteistöjaotus OGC API Features OpenAPI -kuvaus</a></li>
           <li class="list-group-item"><a href="javascript:demo('tilejson')" class="btn btn-link">Kiinteistöjaotus Vector Tiles TileJSON kuvaus</a></li>
@@ -69,9 +72,9 @@
         <label for="beta1" class="card-text">Esimerkkejä asiakassovellusten toteutuksesta</label>
         <ul id="beta1" class="list-group">
           <li class="list-group-item"><a href="javascript:demo('features')" class="btn btn-link">Kiinteistöjaotus Vector Tiles ja OGC API Features</a></li>
-          <li class="list-group-item"><a href="javascript:demo('quick')" class="btn btn-link">Kiinteistöjaotus Vector Tiles Simple</a>
-<div class="consolas">
-import 'ol/ol.css';
+          <li class="list-group-item"><a href="javascript:demo('quick')" class="btn btn-link">Kiinteistöjaotus Vector Tiles (Maplibre GL JS)</a></li>
+          <li class="list-group-item"><a href="javascript:demo('simple')" class="btn btn-link">Kiinteistöjaotus Vector Tiles (OpenLayers)</a>
+<div class="consolas">import 'ol/ol.css';
 import apply from 'ol-mapbox-style';
 import Map from 'ol/Map';
 
@@ -80,10 +83,7 @@ const map = new Map({ target: 'map' });
 fetch(<a href="javascript:demo('kipa_kiinteistojaotus_raster_v1)">'/kipa/WGS84_Pseudo-Mercator/kipa_kiinteistojaotus_raster_v1.json'</a>).
   then(r => r.json()).
   then(styleJson => { apply( map, styleJson); });
-  <a href="javascript:demo('quick_source')" title="Github Source" class="text-decoration-none">
-    Lähdekoodi GitHubissa <i class="bi bi-github"></i>
-  </a>
-</div>
+<a href="javascript:demo('quick_source')" title="Github Source" class="text-decoration-none">Lähdekoodi GitHubissa <i class="bi bi-github"></i></a></div>
           </li>
          </ul>
       </div>
