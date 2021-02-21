@@ -45,7 +45,11 @@ window.demo = (demo) => {
       document.location=
       `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_quick_beta1/index.html${hash}`;
       break;
-  }
+    case 'simple':
+        document.location=
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/index.html${hash}`;
+        break;
+    }
   return false;
 
 };
