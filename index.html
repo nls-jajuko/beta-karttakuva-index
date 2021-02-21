@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>beta-karttakuva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <style>
+    .map {
+      font-family: sans-serif;
+      width: 100%;
+      height: 100%;
+      position: fixed
+    }
+
+    .cards {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background-color: white;
+      padding: 1rem;
+      width: 36rem;
+
+    }
+    body {font-family: 'Titillium Web', sans-serif;}
+
+    h1,h2,h3,h4,h5 { font-size: 1rem !important;}
+    .consolas {
+      white-space: pre;
+      padding-left: 1rem;
+      font-size:1rem;
+      font-family: 'Syne Mono', monospace;
+    }
+    .logo {
+      display: inline;
+      height: 3rem;
+      padding-bottom: 1rem;
+    }
+    h1 {display: inline;
+    padding-left: 1rem;
+    }
+    beta1 {
+      overflow: scroll;
+      height: 60vh;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="cards">
+    <div class="card" class="beta1">
+      <div class="card-body">
+        <img class="logo" alt="mml logo" src="https://www.maanmittauslaitos.fi/themes/custom/mml/images/suomi_logo_rgb.svg" />
+        <h1 class="card-title">Kiinteistöjaotus - beta1</h1>
+        <p class="card-text">2.3.2021 julkaistaan Kiinteistöjaotuksen OGC API Features ja Vektoritiilet beta1</p>
+
+        <label for="api" class="card-text">Rajapintakuvaukset</label>
+        <ul id="api" class="list-group">
+          <li class="list-group-item"><a href="javascript:demo('openapi')" class="btn btn-link">Kiinteistöjaotus OGC API Features OpenAPI -kuvaus</a></li>
+          <li class="list-group-item"><a href="javascript:demo('tilejson')" class="btn btn-link">Kiinteistöjaotus Vector Tiles TileJSON kuvaus</a></li>
+        </ul>
+
+        <label for="beta1" class="card-text">Esimerkkejä asiakassovellusten toteutuksesta</label>
+        <ul id="beta1" class="list-group">
+          <li class="list-group-item"><a href="javascript:demo('features')" class="btn btn-link">Kiinteistöjaotus Vector Tiles ja OGC API Features</a></li>
+          <li class="list-group-item"><a href="javascript:demo('quick')" class="btn btn-link">Kiinteistöjaotus Vector Tiles Simple</a>
+<div class="consolas">
+import 'ol/ol.css';
+import apply from 'ol-mapbox-style';
+import Map from 'ol/Map';
+
+const map = new Map({ target: 'map' });
+
+fetch(<a href="javascript:demo('kipa_kiinteistojaotus_raster_v1)">'/kipa/WGS84_Pseudo-Mercator/kipa_kiinteistojaotus_raster_v1.json'</a>).
+  then(r => r.json()).
+  then(styleJson => { apply( map, styleJson); });
+  <a href="javascript:demo('quick_source')" title="Github Source" class="text-decoration-none">
+    Lähdekoodi GitHubissa <i class="bi bi-github"></i>
+  </a>
+</div>
+          </li>
+         </ul>
+      </div>
+    </div>
+  </div>
+  <div id="map" class="map"></div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
