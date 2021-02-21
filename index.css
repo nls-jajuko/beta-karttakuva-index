@@ -1,0 +1,171 @@
+
+#container {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+}
+.olMap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.mlMap {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  width:100%;
+}
+
+body:not(.olMap) div.ol {
+  display:none;
+}
+body.olMap div.ol {
+  position: fixed;
+  left: 3rem;
+  top: 1rem;
+  z-index: 2000;
+}
+
+body:not(.mlMap) div.ml {
+  display:none;
+}
+body.mlMap div.ml {
+  position: fixed;
+  left: 3rem;
+  top: 1rem;
+  z-index: 2000;  
+}
+  img.prompt {
+    width: 18rem;
+    margin-left: 1rem;
+  }
+
+  .cards {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background-color: white;
+    padding: 0;
+    width: 38rem;
+
+  }
+
+  body {
+    font-family: 'Titillium Web', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 1rem !important;
+  }
+
+  .consolas {
+    white-space: pre;
+    padding-left: .5rem;
+    font-size: .875rem;
+    font-family: 'Syne Mono', monospace;
+  }
+  .consolas span.comment {
+    color: green;
+  }
+
+  .logo {
+    display: inline;
+    height: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    display: inline;
+    padding-left: 1rem;
+  }
+
+  beta1 {
+    overflow: scroll;
+    height: 60vh;
+  }
+
+  
+  .list-group-item {
+    padding: 0.125rem !important;
+    border: none !important;
+  }
+
+
+  body:not(.page_1) div.page_1 {
+      display:none;
+  }
+  body:not(.page_2) div.page_2 {
+    display:none;
+  }
+  body:not(.page_3) div.page_3 {
+    display:none;
+  }
+
+
+body.page_1 a.page_1 i.bi-plus-circle {
+  display:none;
+}
+body.page_2 a.page_2 i.bi-plus-circle {
+  display:none;
+}
+body.page_3 a.page_3 i.bi-plus-circle {
+  display:none;
+}
+
+body:not(.page_1) a.page_1 i.bi-check-circle {
+  display:none;
+}
+body:not(.page_2) a.page_2 i.bi-check-circle {
+  display:none;
+}
+body:not(.page_3) a.page_3 i.bi-check-circle {
+  display:none;
+}
+
+body:not(.page_1) a.page_1 {
+  background-color: white;
+  width: 32rem;
+  text-align: left;
+}
+body:not(.page_2) a.page_2 {
+  width: 16rem;
+  background-color: white;
+  text-align: left;
+}
+body:not(.page_3) a.page_3 {
+  background-color: white;
+  width: 16rem;
+  text-align: left;
+}
+
+body.page_1 a.page_1  {
+  width: 32rem;
+  text-align: left;
+  pointer-events: none;
+  color: black !important;
+  text-decoration: none !important;
+}
+body.page_2 a.page_2  {
+  width: 16rem;
+  text-align: left;
+  pointer-events: none;
+  color: black !important;
+  text-decoration: none !important;
+}
+body.page_3 a.page_3 {
+  width: 16rem;
+  text-align: left;
+  pointer-events: none;
+  color: black !important;
+  text-decoration: none !important;
+}
+
+p.description { 
+  padding-left: .5rem;
+}
+
+
+.page-group-item {
+  padding-left: .5rem;
+}
