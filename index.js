@@ -32,7 +32,7 @@ window.demo = (demo) => {
   switch (demo) {
     case 'features':
       document.location =
-        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_beta1/index.html?lang=fin&crs=EPSG%3A3067&vector=true${hash}`;
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_beta1/index.html?lang=fin&crs=EPSG%3A3067&vector=false${hash}`;
       break;
     case 'quick':
       document.location =
@@ -41,6 +41,10 @@ window.demo = (demo) => {
     case 'simple':
       document.location =
         `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/index.html${hash}`;
+      break;
+    case 'styles':
+      document.location = 
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_style_beta1/#12.49/-72.69304/-12.51414`;
       break;
   }
   return false;

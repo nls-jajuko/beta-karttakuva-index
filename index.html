@@ -17,16 +17,57 @@
       <div class="card-body">
         <img class="logo" alt="mml logo"
           src="https://www.maanmittauslaitos.fi/themes/custom/mml/images/suomi_logo_rgb.svg" />
-        <h1 class="card-title">Kiinteistöjaotus - beta1</h1>
+        <h1 class="card-title">Kiinteistötietojen kyselypalvelu (OGC API Features) ja Karttakuvapalvelu (Vektoritiilet) - BETA</h1>
         <p class="card-text">
-          Kiinteistöjaotuksen OGC API Features ja Vector Tiles beta1 
-         julkaistaan  NN.3.2021 
         </p>
       </div>
-      <div class="page_1 page-group-item">
-        <p class="description">
-         ... xxx ... yyy ...
-        </p>
+      <a class="btn btn-link page_1" href="javascript:goto('1')">
+        <label for="description"><i class="bi bi-house-door"></i>&nbsp;Palvelun esittely</a></label>
+      <div id="description" class="card-body page_1 page-group-item">
+        <div class="card-text">
+          Kiinteistötietojen kyselypalvelu (OGC API Features)<br/>- palvelusta voi hakea kiinteistörekisterin tietoja
+          sijainti- ja ominaisuusrajauksin.
+          <ul>
+            <li>
+              <a target="_blank"
+                href="https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/features/v1/api">Palvelun OGCAPI Features
+                -etusivu</a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/features/v1/api">Palvelun OpenAPI
+                -kuvaus</a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/features/v1/collections">Luettelo
+                palvelun tarjoamista kohteista</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.ogc.org/standards/ogcapi-features"><i
+                  class="bi bi-link-45deg"></i>&nbsp;OGCAPI Features -standardi</a>, johon palvelun toteutus perustuu
+            </li>
+          </ul>
+        </div>
+        <div class="card-text">
+          Karttakuvapalvelu (Vektoritiilet) BETA<br />- palvelusta saa kiinteistöjaotuksen tietoja karttatiilinä.
+          <ul>
+            <li>
+              <a target="_blank"
+                href="https://beta-karttakuva.maanmittauslaitos.fi/kiinteisto-avoin/tilejson/kiinteistojaotus/default/v2/WGS84_Pseudo-Mercator/tilejson.json">Palvelun
+                TileJSON -kuvaus</a>, jonka voi liittää tyylitiedostoon
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://beta-karttakuva.maanmittauslaitos.fi/kipa/WGS84_Pseudo-Mercator/kipa_kiinteistojaotus_simple_v1.json">Vektorikarttatyylitiedoston
+                esimerkki</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://docs.mapbox.com/vector-tiles/specification/"><i
+                  class="bi bi-link-45deg"></i>&nbsp;Vector Tiles -standardi</a>, johon palvelun toteutus perustuu
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="card-body samples">
         <label for="beta1" class="card-text">Asiakassovellusten esimerkkitoteutuksia</label>
@@ -44,53 +85,46 @@
         </nav>
         <div class="page-group">
           <div class="page_2 page-group-item">
-            <div class="consolas"><span class="comment">// sivun kartta esitetään openlayers kirjastolla</span>
+            <pre class="consolas">// sivun kartta esitetään openlayers kirjastolla
 import 'ol/ol.css';
 import Map from 'ol/Map';
 import apply from 'ol-mapbox-style';
 
-const styleUrl = <a href="javascript:demo('kipa_kiinteistojaotus_raster_v1)">'...style.json'</a>,
+const styleUrl = '...style.json',
   map = new Map({ target: 'map' });
-apply( map, styleUrl);
-
-<a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
-  class="text-decoration-none">Lähdekoodi GitHubissa <i class="bi bi-github"></i></a>
-            </div>
+apply( map, styleUrl);</pre>
+            <a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
+              class="text-decoration-none"><i class="bi bi-github"></i></a>
           </div>
           <div class="page_3 page-group-item">
-            <div class="consolas"><span class="comment">// sivun kartta esitetään maplibre kirjastolla</span>
+            <pre class="consolas">// sivun kartta esitetään maplibre kirjastolla
 import 'maplibre-gl/dist/maplibre-gl.css';
 import Map from 'maplibre-gl'
 
 
-const styleUrl = <a href="javascript:demo('kipa_kiinteistojaotus_raster_v1)">'...style.json'</a>,
+const styleUrl = '...style.json',
   map = new Map({ container: 'map', 
-  style: styleUrl); 
-
-<a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
-  class="text-decoration-none">Lähdekoodi GitHubissa <i class="bi bi-github"></i></a>          
-</div>
+  style: styleUrl);</pre>
+            <a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
+              class="text-decoration-none"><i class="bi bi-github"></i></a>
           </div>
         </div>
       </div>
       <div class="card-body">
-        <label for="api" class="card-text">Laajemmat esimerkkisovellukset</label>
-        <ul id="api" class="list-group">
-          <li class="list-group-item"><a href="javascript:demo('features')"
-            class="btn btn-link">
-            OGCAPI Features ja Vector Tiles</a></li>
+        <div class="card-text">
+          <label for="api" class="card-text">Laajemmat esimerkkisovellukset</label>
+          <ul id="api">
+            <li><a href="javascript:demo('features')" >Vektoritiilet ja OGCAPI Features palvelujen
+                yhdistelmä</a><br /> <span class="comment">
+                Esimerkkisovellus, joka esittelee vektoritiilten ja OGC API Features palvelun yhteiskäyttöä kartalla
+              </span></li>
+            <li><a href="javascript:demo('styles')" >
+                Vektorikohteiden tyylejä eri taustakartoilla</a><br /> <span class="comment">
+                  Esimerkkisovellus, joka esittelee erityisesti vektoritiilten tyylittämistä eri taustakartoilla sekä
+                kohteiden tietoihin perustuen
+              </span></li>
           </ul>
-
-      </div>
-      <div class="card-body">
-        <label for="api" class="card-text">Uusien palveluiden rajapintakuvaukset</label>
-        <ul id="api" class="list-group">
-          <li class="list-group-item"><a href="javascript:demo('openapi')" class="btn btn-link">
-            Kiinteistöjaotus OGC API Features OpenAPI -kuvaus</a></li>
-          <li class="list-group-item"><a href="javascript:demo('tilejson')" class="btn btn-link">
-            Kiinteistöjaotus Vektoritiilien TileJSON kuvaus</a></li>
-        </ul>
-
+        </div>
       </div>
     </div>
   </div>
