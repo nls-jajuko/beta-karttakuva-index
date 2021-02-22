@@ -53,6 +53,7 @@ body.mlMap div.ml {
     width: 38rem;
     max-height: 90vh;
     overflow-y: scroll;
+    box-shadow: 5px 0px 8px rgb(0 0 0 / 30%)
   }
 
   body {
@@ -114,23 +115,23 @@ body.mlMap div.ml {
   }
 
 
-body.page_1 a.page_1 i.bi-plus-circle {
+body.page_1 a.page_1 i.bi-arrow-right-circle-fill {
   display:none;
 }
-body.page_2 a.page_2 i.bi-plus-circle {
+body.page_2 a.page_2 i.bi-arrow-right-circle-fill {
   display:none;
 }
-body.page_3 a.page_3 i.bi-plus-circle {
+body.page_3 a.page_3 i.bi-arrow-right-circle-fill {
   display:none;
 }
 
-body:not(.page_1) a.page_1 i.bi-check-circle {
+body:not(.page_1) a.page_1 i.bi-arrow-down-circle-fill {
   display:none;
 }
-body:not(.page_2) a.page_2 i.bi-check-circle {
+body:not(.page_2) a.page_2 i.bi-arrow-down-circle-fill {
   display:none;
 }
-body:not(.page_3) a.page_3 i.bi-check-circle {
+body:not(.page_3) a.page_3 i.bi-arrow-down-circle-fill {
   display:none;
 }
 

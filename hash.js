@@ -7,6 +7,7 @@ import Map from 'ol/Map';
 import { get as getProjection, transform } from 'ol/proj';
 
 /*
+ * Universal ZOOM ...
  * Adds the map's position to its page's location hash.
  * Passed as an option to the map object.
  *
@@ -61,7 +62,8 @@ class Hash {
     getHashString(mapFeedback) {
         const _center = this._map.getView().getCenter(),
             center = transform(_center,this._map.getView().getProjection(),getProjection('EPSG:4326')),
-            zoom = Math.round(this._map.getView().getZoom() * 100) / 100,
+            zoomOff = this._map.getView().getProjection().getCode()==='EPSG:3067' ? +3.0 : 0, 
+            zoom = zoomOff+ Math.round(this._map.getView().getZoom() * 100) / 100,
             // derived from equation: 512px * 2^z / 360 / 10^d < 0.5px
             precision = Math.ceil((zoom * Math.LN2 + Math.log(512 / 360 / 0.5)) / Math.LN10),
             m = Math.pow(10, precision),
@@ -125,7 +127,11 @@ class Hash {
             const bearing = 0,
                  center = transform([loc[2],loc[1]],'EPSG:4326',this._map.getView().getProjection());
             this._map.getView().setCenter( center );
-            this._map.getView().setZoom(+loc[0])
+
+            let zoomOff = this._map.getView().getProjection().getCode()==='EPSG:3067' ? -3.0 : 0,             
+                hashZoom = parseFloat(loc[0]),
+                zoom = zoomOff+hashZoom;
+            this._map.getView().setZoom(zoom)
             /*,
                 bearing,
                 pitch: +(loc[4] || 0)

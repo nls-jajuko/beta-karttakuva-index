@@ -7,22 +7,23 @@ import { mlMap } from './maplibre';
 const
   params = new URLSearchParams(document.location.search);
 
-if(!params.get('page')) {
-  document.location.search='?page=1';
+if (!params.get('page')) {
+  document.location.search = '?page=1';
 }
 
 applyPage(params);
-applyMap(params);
+applyMap(params,document.location.hash);
 
 window.goto = (page) => {
   const hash = document.location.hash,
     params = new URLSearchParams(document.location.search),
     url = new URL(document.location.href);
-  params.set('page',page);
+  params.set('page', page);
   url.search = params;
+  url.hash=hash;
 
-  const loc = `${url}#${hash}`;
-  document.location=loc;
+  const loc = `${url}`;
+  document.location = loc;
 
 }
 
@@ -34,6 +35,10 @@ window.demo = (demo) => {
       document.location =
         `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_beta1/index.html?lang=fin&crs=EPSG%3A3067&vector=false${hash}`;
       break;
+    case 'tm35fin':
+      document.location =
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_tm35fin_beta1/index.html${hash}`;
+      break;
     case 'quick':
       document.location =
         `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_quick_beta1/index.html${hash}`;
@@ -43,8 +48,28 @@ window.demo = (demo) => {
         `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/index.html${hash}`;
       break;
     case 'styles':
-      document.location = 
+      document.location =
         `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_style_beta1/#12.49/-72.69304/-12.51414`;
+      break;
+  }
+  return false;
+
+};
+
+window.github = (demo) => {
+  console.log(demo);
+  switch (demo) {
+    case 'tm35fin':
+      document.location =
+        `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_tm35fin_beta1/`;
+      break;
+    case 'ol':
+      document.location =
+      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/`;
+      break;
+    case 'maplibre':
+      document.location =
+      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_quick_beta1/`;
       break;
   }
   return false;
@@ -65,26 +90,21 @@ function applyPage(params) {
 }
 
 
-function applyMap(params) {
+function applyMap(params,hash) {
   const apiKey = '7cd2ddae-9f2e-481c-99d0-404e7bc7a0b2',
     /* get your own api key at maanmittauslaitos.fi <<https://www.maanmittauslaitos.fi/rajapinnat/api-avaimen-ohje>> */
 
     styleName = 'kipa_kiinteistojaotus_raster_v1',
-    tileMatrixSet = 'WGS84_Pseudo-Mercator',
+    tileMatrixSet = params.get('TileMatrixSet') || 'WGS84_Pseudo-Mercator',
     styleUrl = `https://beta-karttakuva.maanmittauslaitos.fi/kipa/${tileMatrixSet}/${styleName}.json`;
 
   const pageVal = params.get('page');
 
   fetch(styleUrl).then(r => r.json()).then(styleJson => {
-    if (!(document.location.hash.length > 1)) {
+    if (!(hash.length > 1)) {
       styleJson.center = [21.75184, 62.38502];
       styleJson.zoom = 13.08;
     }
-    const url =
-      styleJson.sources.rasteritaustakartta.tiles[0];
-
-    styleJson.sources.rasteritaustakartta.tiles[0] =
-      url.replace('karttamoottori', 'avoin-karttakuva').replace('maasto', 'avoin') + `?api-key=${apiKey}`;
 
     switch (pageVal) {
       case '1':
@@ -97,9 +117,9 @@ function applyMap(params) {
         return mlMap(styleJson, 'map')
         break;
     }
-  }).then(map=>{
+  }).then(map => {
     console.log(map);
-    window.map =map;
+    window.map = map;
   });
 
 }

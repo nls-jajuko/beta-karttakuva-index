@@ -30,7 +30,7 @@
           <ul>
             <li>
               <a target="_blank"
-                href="https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/features/v1/api">Palvelun OGCAPI Features
+                href="https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/features/v1/">Palvelun OGCAPI Features
                 -etusivu</a>
             </li>
             <li>
@@ -74,13 +74,13 @@
         <nav aria-label="...">
           <div id="beta1" class="samples">
             <a class="btn btn-link page_2" href="javascript:goto('2')">
-              <i class="bi bi-check-circle"></i>
-              <i class="bi bi-plus-circle"></i>
-              Vektoritiilet (OpenLayers)</a>
+              <i class="bi bi-arrow-down-circle-fill"></i>
+              <i class="bi bi-arrow-right-circle-fill"></i>
+              Vektoritiilet (OpenLayers, WebMercator)</a>
             <a class="btn btn-link page_3" href="javascript:goto('3')">
-              <i class="bi bi-check-circle"></i>
-              <i class="bi bi-plus-circle"></i>
-              Vektoritiilet (Maplibre GL JS)</a>
+              <i class="bi bi-arrow-down-circle-fill"></i>
+              <i class="bi bi-arrow-right-circle-fill"></i>
+              Vektoritiilet (Maplibre GL JS, WebMercator)</a>
           </div>
         </nav>
         <div class="page-group">
@@ -93,9 +93,10 @@ import apply from 'ol-mapbox-style';
 const styleUrl = '...style.json',
   map = new Map({ target: 'map' });
 apply( map, styleUrl);</pre>
-            <a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
-              class="text-decoration-none"><i class="bi bi-github"></i></a>
-          </div>
+            <a class="sourcecode" href="javascript:github('ol')" title="Github Source"
+              class="text-decoration-none"><i class="bi bi-github"></i>&nbsp;Lähdekoodi</a>
+              <hr />
+            </div>
           <div class="page_3 page-group-item">
             <pre class="consolas">// sivun kartta esitetään maplibre kirjastolla
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -105,18 +106,26 @@ import Map from 'maplibre-gl'
 const styleUrl = '...style.json',
   map = new Map({ container: 'map', 
   style: styleUrl);</pre>
-            <a class="sourcecode" href="javascript:demo('quick_source')" title="Github Source"
-              class="text-decoration-none"><i class="bi bi-github"></i></a>
-          </div>
+            <a class="sourcecode" href="javascript:github('maplibre')" title="Github Source"
+              class="text-decoration-none"><i class="bi bi-github"></i>&nbsp;Lähdekoodi</a>
+              <hr />
+            </div>
+          <div class="card-text page-group-item">
+          <a href="javascript:demo('tm35fin')" ><i
+            class="bi bi-arrow-up-right-circle"></i>&nbsp;Vektoritiilet (OpenLayers,ETRS-TM35FIN)</a><br /> <span class="comment">
+            Esimerkkisovellus, joka esittelee vektoritiilten käyttöä kansallisessa projektiossa ja tiilimatriisissa.
+          </span>
+        </div>
         </div>
       </div>
       <div class="card-body">
         <div class="card-text">
           <label for="api" class="card-text">Laajemmat esimerkkisovellukset</label>
           <ul id="api">
-            <li><a href="javascript:demo('features')" >Vektoritiilet ja OGCAPI Features palvelujen
+          <li><a href="javascript:demo('features')" >Vektoritiilet ja OGCAPI Features palvelujen
                 yhdistelmä</a><br /> <span class="comment">
                 Esimerkkisovellus, joka esittelee vektoritiilten ja OGC API Features palvelun yhteiskäyttöä kartalla
+                eri taustakartoilla sekä eri tiilimatriiseissa (WebMercator, ETRS-TM35FIN).
               </span></li>
             <li><a href="javascript:demo('styles')" >
                 Vektorikohteiden tyylejä eri taustakartoilla</a><br /> <span class="comment">
