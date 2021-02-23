@@ -37,15 +37,15 @@ window.demo = (demo) => {
       break;
     case 'tm35fin':
       document.location =
-        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_tm35fin_beta1/index.html${hash}`;
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus-tm35fin-beta1/index.html${hash}`;
       break;
-    case 'quick':
+    case 'maplibre':
       document.location =
-        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_quick_beta1/index.html${hash}`;
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus-maplibregljs-beta1/index.html${hash}`;
       break;
-    case 'simple':
+    case 'ol':
       document.location =
-        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/index.html${hash}`;
+        `https://beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus-openlayers-beta1/index.html${hash}`;
       break;
     case 'styles':
       document.location =
@@ -61,15 +61,15 @@ window.github = (demo) => {
   switch (demo) {
     case 'tm35fin':
       document.location =
-        `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_tm35fin_beta1/`;
+        `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/tree/master/kipa/kiinteistojaotus-tm35fin-beta1`;
       break;
     case 'ol':
       document.location =
-      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_simple_beta1/`;
+      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/tree/master/kipa/kiinteistojaotus-openlayers-beta1`;
       break;
     case 'maplibre':
       document.location =
-      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/kipa/kiinteistojaotus_quick_beta1/`;
+      `https://github.com/nlsfi/beta-karttakuva.maanmittauslaitos.fi/tree/master/kipa/kiinteistojaotus-maplibregljs-beta1`;
       break;
   }
   return false;

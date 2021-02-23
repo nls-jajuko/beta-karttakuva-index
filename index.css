@@ -78,7 +78,10 @@ body.mlMap div.ml {
     white-space: pre;
     padding-left: .5rem;
     font-size: .875rem;
-    font-family: 'IBM Plex Mono', monospace;  }
+    font-family: 'IBM Plex Mono', monospace;  
+    border: .1rem solid #fafafa;
+    background: #fcfcfc;
+  }
 
   span.comment {
     padding-left:1rem;
@@ -179,4 +182,8 @@ p.description {
 
 .page-group-item {
   padding-left: .5rem;
+}
+
+.sourcecode {
+  
 }
