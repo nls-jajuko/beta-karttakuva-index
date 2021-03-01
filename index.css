@@ -41,7 +41,8 @@ body.mlMap div.ml {
   }
 
   .card-body {
-    padding: .5rem !important; 
+    padding: .25rem !important; 
+    padding-left:.5rem !important;
   }
   .cards {
     position: absolute;
@@ -50,10 +51,10 @@ body.mlMap div.ml {
     z-index: 1000;
     background-color: white;
     padding: 0;
+    padding-top: .5rem !important;
     width: 38rem;
     max-height: 90vh;
     overflow-y: scroll;
-    box-shadow: 5px 0px 8px rgb(0 0 0 / 30%)
   }
 
   body {
@@ -69,8 +70,9 @@ body.mlMap div.ml {
     font-size: 1rem !important;
   }
   h1 {
-    display: inline;
+    display: block;
     padding-left: 1rem;
+    padding-top:.5rem;
   }
 
 
@@ -84,13 +86,15 @@ body.mlMap div.ml {
   }
 
   span.comment {
-    padding-left:1rem;
+    padding-left:.25rem;
   }
 
   .logo {
-    display: inline;
+    display: block;
     height: 3rem;
-    padding-bottom: 1rem;
+    position:absolute;
+    right: 1rem;
+    top: .5rem;
   }
 
 
@@ -175,15 +179,8 @@ body.page_3 a.page_3 {
   text-decoration: none !important;
 }
 
-p.description { 
-  padding-left: .5rem;
-}
-
 
 .page-group-item {
   padding-left: .5rem;
 }
 
-.sourcecode {
-  
-}
