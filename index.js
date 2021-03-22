@@ -91,14 +91,16 @@ function applyPage(params) {
 
 
 function applyMap(params,hash) {
+  const pageVal = params.get('page');
   const apiKey = '7cd2ddae-9f2e-481c-99d0-404e7bc7a0b2',
     /* get your own api key at maanmittauslaitos.fi <<https://www.maanmittauslaitos.fi/rajapinnat/api-avaimen-ohje>> */
 
-    styleName = 'kipa_kiinteistojaotus_raster_v1',
+    styleName = pageVal == '3' ? 'kipa_kiinteistojaotus_maplibre_v1' :'kipa_kiinteistojaotus_raster_v1' ,
     tileMatrixSet = params.get('TileMatrixSet') || 'WGS84_Pseudo-Mercator',
     styleUrl = `https://beta-karttakuva.maanmittauslaitos.fi/kipa/${tileMatrixSet}/${styleName}.json`;
 
-  const pageVal = params.get('page');
+  
+
 
   fetch(styleUrl).then(r => r.json()).then(styleJson => {
     if (!(hash.length > 1)) {
